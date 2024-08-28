@@ -48,6 +48,10 @@ If(LaunchMethod="BrowserProtocol")
 {
     GLOBAL Method := "1"
 }
+If(LaunchMethod="Default")
+{
+    GLOBAL Method := "0"
+}
 If(LaunchMethod="")
 {
     GLOBAL Method := "1"
@@ -89,7 +93,7 @@ If(WhiteLionFix="1")
     }
 }
 
-I(Method="2")
+If(Method="2")
 {
     If(EnableBreakpad="1")
     {
@@ -99,6 +103,11 @@ I(Method="2")
     {
         Run, %A_ScriptDir%\steam_minimal_commandline-nobreakpad.bat
     }
+}
+
+If(Method="0")
+{
+    Run, steam://launch
 }
 
 Return
