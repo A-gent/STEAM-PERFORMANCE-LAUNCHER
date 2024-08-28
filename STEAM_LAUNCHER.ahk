@@ -40,7 +40,7 @@ Else
     MsgBox, 4096, STEAM MINIMAL STARTUP, LaunchMethod was improperly defined in the config file. `n`n`n   The only two acceptable values are: `n`n   Commandline   OR   BrowserProtocol `n`n`nPlease edit the config file and change the LaunchMethod. `n`nThe Launcher will now exit after this messagebox is dismissed.
     ExitApp
 }
-If(LaunchMethod="Commandline" 
+If(LaunchMethod="Commandline") 
 {
     GLOBAL Method := "2"
 }
@@ -56,7 +56,7 @@ If(LaunchMethod="")
 
 
 StartSteamFirstBecauseFuckYouMacOkayNo:
-I(Method="1")
+If(Method="1")
 {
 If(WhiteLionFix="1")
     {
